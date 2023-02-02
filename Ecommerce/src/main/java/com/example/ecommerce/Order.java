@@ -18,8 +18,9 @@ public class Order {
             orderID = res.getInt("oID") + 1;
         }
         Timestamp ts = new Timestamp(Calendar.getInstance().getTime().getTime());
-        String query = String.format("Insert into orders values(%s, %s,'%s',%s)",orderID,productID,
+        String query = String.format("Insert into orders values(%s, %s,'%s','%s')",orderID,productID,
                 HelloApplication.emailID,ts);
+        System.out.println(query);
         int response = HelloApplication.connection.executeUpdate(query);
         if(response > 0){
             Dialog<String> dialog = new Dialog<>();

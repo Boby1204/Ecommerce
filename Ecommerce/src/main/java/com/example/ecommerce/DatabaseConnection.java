@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class DatabaseConnection {
     Connection con;
-    public String SQLURL = "jdbc:mysql://localhost:3306/ecommerce?useSSL=false";
+    public String SQLURL = "jdbc:mysql://localhost:3306/ecommerce?allowPublicKeyRetrieval=true&&useSSL=false";
     String userName = "root";
     String password = "Boby1204";
     DatabaseConnection() throws SQLException {
@@ -37,4 +37,8 @@ public class DatabaseConnection {
       }
         return row;
     }
+
+//    public static void main(String[] args) throws SQLException {
+//        DatabaseConnection db = new DatabaseConnection();
+//    }
 }
